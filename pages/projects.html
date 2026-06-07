@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Projects</title>
+
+<link rel="icon" href="../assets/images/icon.png">
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/responsive.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<canvas id="lightningCanvas"></canvas>
+
+<nav>
+
+<ul>
+
+<li><a href="home.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<section class="featured-projects">
+
+    <h1>Featured Projects</h1>
+
+    <p class="section-subtitle">
+
+        A curated collection of academic and development projects
+        showcasing system design, database management, and
+        modern web development.
+
+    </p>
+
+    <!-- PROJECT 1 -->
+
+    <div class="featured-project">
+
+        <div class="project-content">
+
+            <span class="module">
+                Creative Module 01.
+            </span>
+
+            <h2>
+                Student E-Portal System 
+            </h2>
+
+            <p class="live-link">
+
+                VIEW PROJECT:
+                <a href="#">
+                    STUDENT E-PORTAL SYSTEM (SOON)
+                </a>
+
+            </p>
+
+            <div class="project-tags">
+
+                <span>PHP</span>
+                <span>MySQL</span>
+                <span>Student Portal</span>
+                <span>Database</span>
+                <span>Web Application</span>
+
+            </div>
+
+            <p class="project-description">
+
+                Developed a Student E-Portal System for
+                St. Dominic Savio College that centralizes
+                student records, schedules, announcements,
+                and academic services within a single platform.
+
+            </p>
+
+            <ul class="project-points">
+
+                <li>Developed student account management system.</li>
+
+                <li>Implemented database-driven information retrieval.</li>
+
+                <li>Created responsive interfaces for students and administrators.</li>
+
+            </ul>
+
+        </div>
+
+        <div class="project-image">
+
+            <div class="project-preview"
+                 onclick="openGallery('gallery1')">
+
+                <img src="../assets/project1/cover.png">
+
+                <div class="view-images">
+
+                    <i class="fa-regular fa-eye"></i>
+
+                    VIEW IMAGES
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- PROJECT 2 -->
+
+    <div class="featured-project reverse">
+
+        <div class="project-image">
+
+            <div class="project-preview"
+                 onclick="openGallery('gallery2')">
+
+                <img src="../assets/project2/cover.png" alt="AI Campus Directory System preview">
+
+                <div class="view-images">
+
+                    <i class="fa-regular fa-eye"></i>
+
+                    VIEW IMAGES
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="project-content">
+
+            <span class="module">
+                Creative Module 02.
+            </span>
+
+            <h2>
+                AI Campus Directory System 
+            </h2>
+
+            <p class="live-link">
+
+                VIEW PROJECT:
+                <a href="#">
+                    AI-CAMPUS-DIRECTORY (SOON)
+                </a>
+
+            </p>
+
+            <div class="project-tags">
+
+                <span>Artificial Intelligence</span>
+                <span>Knowledge Base</span>
+                <span>Directory System</span>
+                <span>Web Application</span>
+
+            </div>
+
+            <p class="project-description">
+
+                A modern campus directory platform integrated
+                with an AI knowledge-based system to improve
+                accessibility of school information and navigation.
+
+            </p>
+
+            <ul class="project-points">
+
+                <li>Designed searchable campus information system.</li>
+
+                <li>Implemented AI-powered knowledge retrieval.</li>
+
+                <li>Improved user navigation and accessibility.</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+<div id="gallery-modal" class="gallery-modal" onclick="if(event.target === this) closeGallery()">
+
+    <div class="gallery-modal-content">
+
+        <button class="gallery-close" type="button" onclick="closeGallery()">&times;</button>
+
+        <div id="gallery-modal-controls" class="gallery-controls">
+
+            <button class="gallery-nav gallery-prev" type="button" onclick="prevImage()">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <div class="gallery-stage">
+                <img id="gallery-modal-image" alt="Project gallery image">
+                <p id="gallery-modal-message" class="gallery-message"></p>
+                <div id="gallery-modal-counter" class="gallery-counter"></div>
+            </div>
+
+            <button class="gallery-nav gallery-next" type="button" onclick="nextImage()">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="../js/lightning.js"></script>
+<script src="../js/script.js"></script>
+
+</body>
+</html>

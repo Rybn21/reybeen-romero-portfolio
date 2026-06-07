@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Home | Reybeen Romero</title>
+
+<link rel="icon" href="../assets/images/icon.png">
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/responsive.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<canvas id="lightningCanvas"></canvas>
+
+<nav>
+
+
+<ul>
+
+<li>
+<a href="home.html">
+Home
+</a>
+</li>
+
+<li>
+<a href="about.html">
+About
+</a>
+</li>
+
+<li>
+<a href="projects.html">
+Projects
+</a>
+</li>
+
+<li>
+<a href="contact.html">
+Contact
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h3>
+HELLO I'M
+</h3>
+
+<h1>
+
+Reybeen Romero
+
+</h1>
+
+<h2 id="typing">
+
+Computer Science Graduate
+
+</h2>
+
+<p>
+
+<p>
+Eager to learn new technologies,
+continuously improve my skills,
+and contribute to meaningful projects
+through innovation and dedication.
+</p>
+
+</p>
+
+<div class="socials">
+
+ 
+ <a href="https://mail.google.com/mail/?view=cm&to=reybeen21@gmail.com" target="_blank" rel="noopener noreferrer" title="Compose email in Gmail">
+ <i class="fab fa-google"></i>
+  </a>   
+
+<a href="https://github.com/Rybn21" target="_blank">
+<i class="fab fa-github"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/rybn21" target="_blank">
+<i class="fab fa-linkedin"></i>
+</a>
+
+<a href="https://www.facebook.com/reybeen21/" target="_blank">
+<i class="fab fa-facebook"></i>
+</a>
+
+<a href="https://www.instagram.com/rybn_21/" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+<audio id="bgMusic" loop>
+    <source src="../assets/audio/background.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicToggle" class="music-btn">
+    <i class="fa-solid fa-music"></i>
+</button>
+
+<style>
+    .music-btn{
+
+    position:fixed;
+
+    bottom:30px;
+    right:30px;
+
+    width:60px;
+    height:60px;
+
+    border:none;
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:#00ff88;
+
+    color:#000;
+
+    font-size:20px;
+
+    z-index:9999;
+
+    transition:.3s ease;
+
+    box-shadow:
+    0 0 20px rgba(0,255,136,.4);
+
+}
+
+.music-btn:hover{
+
+    transform:scale(1.1);
+
+    box-shadow:
+    0 0 30px rgba(0,255,136,.8);
+
+}
+</style>
+<script>
+    const bgMusic = document.getElementById("bgMusic");
+const musicToggle = document.getElementById("musicToggle");
+
+let musicPlaying = false;
+
+// Try autoplay
+window.addEventListener("load", async () => {
+
+    try {
+
+        bgMusic.volume = 0.3;
+
+        await bgMusic.play();
+
+        musicPlaying = true;
+
+    } catch (err) {
+
+        console.log("Autoplay blocked by browser.");
+
+    }
+
+});
+
+// Toggle button
+musicToggle.addEventListener("click", () => {
+
+    if(musicPlaying){
+
+        bgMusic.pause();
+
+        musicPlaying = false;
+
+        musicToggle.innerHTML =
+        '<i class="fa-solid fa-volume-xmark"></i>';
+
+    }else{
+
+        bgMusic.play();
+
+        musicPlaying = true;
+
+        musicToggle.innerHTML =
+        '<i class="fa-solid fa-music"></i>';
+
+    }
+
+});
+</script>
+<script src="../js/lightning.js"></script>
+<script src="../js/script.js"></script>
+
+</body>
+</html>
