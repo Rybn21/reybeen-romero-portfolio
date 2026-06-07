@@ -308,11 +308,76 @@ function updateGallery(){
 
 }
 
+function isMobileZoomViewport(){
+
+	return window.matchMedia('(max-width: 768px)').matches;
+
+}
+
+function openProjectImageZoom(imageSrc, imageAlt){
+
+	const modal = document.getElementById('project-image-zoom-modal');
+	const target = document.getElementById('project-image-zoom-target');
+
+	if (!modal || !target) return;
+
+	target.src = imageSrc;
+	target.alt = imageAlt || 'Expanded project preview image';
+	modal.style.display = 'flex';
+	document.body.classList.add('image-zoom-open');
+
+}
+
+function closeProjectImageZoom(){
+
+	const modal = document.getElementById('project-image-zoom-modal');
+	const target = document.getElementById('project-image-zoom-target');
+
+	if (modal) modal.style.display = 'none';
+	if (target) target.src = '';
+	document.body.classList.remove('image-zoom-open');
+
+}
+
+function initProjectImageZoom(){
+
+	const previewImages = document.querySelectorAll('.project-preview img');
+
+	if (!previewImages.length) return;
+
+	previewImages.forEach((img) => {
+
+		img.addEventListener('click', (event) => {
+
+			if (!isMobileZoomViewport()) return;
+
+			event.preventDefault();
+			event.stopPropagation();
+
+			openProjectImageZoom(img.currentSrc || img.src, img.alt);
+
+		});
+
+	});
+
+	document.addEventListener('keydown', (event) => {
+
+		if (event.key === 'Escape') closeProjectImageZoom();
+
+	});
+
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+	initProjectImageZoom();
+});
+
 //FOR BACKGROUND MUSIC
 const musicBtn = document.getElementById("musicBtn");
 const bgMusic = document.getElementById("bgMusic");
 
-musicBtn.addEventListener("click", () => {
+if (musicBtn && bgMusic) {
+	musicBtn.addEventListener("click", () => {
 
     if(bgMusic.paused){
 
@@ -325,4 +390,5 @@ musicBtn.addEventListener("click", () => {
 
     }
 
-});
+	});
+}

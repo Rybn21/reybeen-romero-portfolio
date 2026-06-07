@@ -494,6 +494,30 @@ height:45px;
 
 @media (max-width: 768px){
 
+    .project-image-zoom-modal{
+
+        padding:14px;
+
+    }
+
+    .project-image-zoom-modal img{
+
+        max-height:88vh;
+
+    }
+
+    .project-image-zoom-close{
+
+        top:10px;
+        right:10px;
+
+        width:40px;
+        height:40px;
+
+        font-size:1.6rem;
+
+    }
+
     .gallery-modal-content{
 
         width:95%;
