@@ -111,9 +111,9 @@ rel="stylesheet">
             <div class="project-preview"
                  onclick="openGallery('gallery1')">
 
-                <img src="../assets/project1/cover.png">
+                <img src="../assets/project1/cover.png" alt="Student E-Portal System preview">
 
-                <div class="view-images">
+                <div class="view-images" onclick="event.stopPropagation(); openGallery('gallery1')">
 
                     <i class="fa-regular fa-eye"></i>
 
@@ -138,7 +138,7 @@ rel="stylesheet">
 
                 <img src="../assets/project2/cover.png" alt="AI Campus Directory System preview">
 
-                <div class="view-images">
+                <div class="view-images" onclick="event.stopPropagation(); openGallery('gallery2')">
 
                     <i class="fa-regular fa-eye"></i>
 
@@ -201,6 +201,14 @@ rel="stylesheet">
     </div>
 
 </section>
+
+<div id="project-image-zoom-modal" class="project-image-zoom-modal" onclick="if(event.target === this) closeProjectImageZoom()">
+
+    <button class="project-image-zoom-close" type="button" onclick="closeProjectImageZoom()">&times;</button>
+
+    <img id="project-image-zoom-target" alt="Expanded project preview image">
+
+</div>
 
 <div id="gallery-modal" class="gallery-modal" onclick="if(event.target === this) closeGallery()">
 
