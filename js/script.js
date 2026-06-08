@@ -1,3 +1,16 @@
+// Handle page reloads to reset to home page
+const navEntries =
+performance.getEntriesByType("navigation");
+
+if (
+    navEntries.length > 0 &&
+    navEntries[0].type === "reload"
+) {
+
+    window.location.replace("../index.html");
+
+}
+
 const texts = [
 	"Software Engineer",
 	"Aspiring Virtual Assistant",
