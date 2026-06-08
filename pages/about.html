@@ -12,150 +12,7 @@
 
 <link rel="stylesheet" href="../css/style.css">
 <!-- Note: inlined animations.css below -->
-<style>
-/* ==========================
-   PAGE FADE IN
-========================== */
 
-body{
-    animation: fadeIn 1s ease;
-}
-
-@keyframes fadeIn{
-    from{
-        opacity:0;
-    }
-    to{
-        opacity:1;
-    }
-}
-
-/* ==========================
-   FLOATING HERO
-========================== */
-
-.hero-content{
-    animation: floating 5s ease-in-out infinite;
-}
-
-@keyframes floating{
-
-    0%{
-        transform:translateY(0px);
-    }
-
-    50%{
-        transform:translateY(-12px);
-    }
-
-    100%{
-        transform:translateY(0px);
-    }
-
-}
-
-/* ==========================
-   BUTTON GLOW
-========================== */
-
-.download-btn{
-
-    animation: glow 2s infinite alternate;
-
-}
-
-@keyframes glow{
-
-    from{
-
-        box-shadow:
-        0 0 10px #00ff88;
-
-    }
-
-    to{
-
-        box-shadow:
-        0 0 30px #00ff88,
-        0 0 60px #00ff88;
-
-    }
-
-}
-
-/* ==========================
-   SOCIAL ICONS
-========================== */
-
-.socials a{
-
-    animation:socialFloat 4s infinite ease-in-out;
-
-}
-
-.socials a:nth-child(2){
-    animation-delay:.3s;
-}
-
-.socials a:nth-child(3){
-    animation-delay:.6s;
-}
-
-.socials a:nth-child(4){
-    animation-delay:.9s;
-}
-
-@keyframes socialFloat{
-
-    0%{
-        transform:translateY(0px);
-    }
-
-    50%{
-        transform:translateY(-8px);
-    }
-
-    100%{
-        transform:translateY(0px);
-    }
-
-}
-
-/* ==========================
-   LOGO GLOW
-========================== */
-
-.logo{
-
-    animation:logoPulse 3s infinite;
-
-}
-
-@keyframes logoPulse{
-
-    0%{
-
-        text-shadow:
-        0 0 10px #00ff88;
-
-    }
-
-    50%{
-
-        text-shadow:
-        0 0 30px #00ff88,
-        0 0 60px #00ff88;
-
-    }
-
-    100%{
-
-        text-shadow:
-        0 0 10px #00ff88;
-
-    }
-
-}
 </style>
 <link rel="stylesheet" href="../css/responsive.css">
 
@@ -186,52 +43,95 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 </nav>
 
-<section class="about-container">
+<section class="about-section">
 
-    <div class="about-left">
+    <div class="about-card">
 
-        <h1>
-            About Me
-        </h1>
+        <div class="about-header">
+
+            <div class="profile-wrapper">
+
+                <div class="profile-glow"></div>
+
+                <img
+                src="../assets/images/profile.png"
+                alt="Reybeen Romero">
+
+            </div>
+
+            <div class="profile-info">
+
+                <span class="about-label">
+                    ABOUT ME
+                </span>
+
+                <h1>
+                    Reybeen Romero
+                </h1>
+
+                <h2>
+                    Computer Science Graduate
+                </h2>
+
+                <p class="headline">
+                    Aspiring Web Developer • Virtual Assistant • Cloud Engineer
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="about-body">
+
+            <p>
+                I am a fresh Computer Science graduate with knowledge in web
+                development, technical support, troubleshooting, software
+                installation, hardware support, and database management.
+            </p>
+
+            <p>
+                I utilize AI-assisted tools to improve productivity,
+                accelerate learning, enhance research, and streamline
+                development workflows while maintaining a strong
+                understanding of the technologies behind every solution.
+            </p>
+
+            <p>
+                I am passionate about continuous learning and professional
+                growth. Currently seeking opportunities where I can gain
+                real-world experience, contribute to meaningful projects,
+                and further develop my skills within the IT industry.
+            </p>
+
+        </div>
+
+        <div class="skills-section">
+
+            <h3>Technical Skills</h3>
+
+            <div class="skills-grid">
+
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>PHP</span>
+                <span>MySQL</span>
+                <span>GitHub</span>
+
+                <span>Responsive Design</span>
+                <span>Technical Support</span>
+                <span>Hardware Installation</span>
+                <span>Software Installation</span>
+
+                <span>AI-Assisted Development</span>
+                <span>Troubleshooting</span>
+                <span>Problem Solving</span>
+
+            </div>
+
+        </div>
 
     </div>
-
-    <div class="about-divider"></div>
-
-    <div class="about-right">
-
-    <p>
-        I'm <strong>Reybeen Romero</strong>, a fresh Computer Science graduate
-        with a strong interest in web development, technology solutions,
-        and continuous learning. I am passionate about expanding my knowledge,
-        adapting to new technologies, and developing skills that contribute
-        to meaningful digital experiences.
-    </p>
-
-    <p>
-        My experience includes web development, technical support,
-        troubleshooting, hardware and software installation, and assisting
-        users with technology-related concerns. Through internship,
-        technical support, and customer-facing experiences, I have developed
-        strong problem-solving, communication, adaptability, and time
-        management skills.
-    </p>
-
-    <p>
-        I am knowledgeable in web development and utilize AI-assisted tools
-        to support learning, research, and development workflows. By combining
-        technical knowledge with modern technologies, I continuously improve
-        my ability to create efficient, user-friendly, and practical solutions.
-    </p>
-
-    <p>
-        As an aspiring Web Developer, Virtual Assistant, and Cloud Engineer,
-        I am eager to gain real-world experience, collaborate with professionals,
-        and continuously learn new technologies that will help me grow both
-        personally and professionally while contributing value to the IT industry.
-    </p>
-
-</div>
 
 </section>
 
