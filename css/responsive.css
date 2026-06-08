@@ -413,17 +413,14 @@ height:45px;
 
     }
 
-    .gallery-close{
-
-        top:10px;
-        right:10px;
-
-        width:40px;
-        height:40px;
-
-        font-size:1.6rem;
-
+    .gallery-close {
+        top: -15px;
+        right: -10px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.6rem;
     }
+
 
     .gallery-counter{
 
