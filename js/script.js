@@ -1,21 +1,31 @@
+function getGalleryElements() {
+    return {
+        modal: document.getElementById("gallery-modal"),
+        image: document.getElementById("gallery-modal-image"),
+        counter: document.getElementById("gallery-modal-counter"),
+        message: document.getElementById("gallery-modal-message"),
+        controls: document.getElementById("gallery-modal-controls")
+    };
+}
+
 // Handle page reloads to reset to home page
-console.log("SCRIPT LOADED");
-
-const navEntries = performance.getEntriesByType("navigation");
-
-console.log(navEntries);
+const navEntries =
+performance.getEntriesByType("navigation");
 
 if (
     navEntries.length > 0 &&
     navEntries[0].type === "reload"
 ) {
+
     window.location.replace("../index.html");
+
 }
 
 const texts = [
+	"Wawata Leader",
 	"Software Engineer",
-	"Aspiring Virtual Assistant",
-	"IT Support",
+	"Virtual Assistant",
+	"Tech Support",
 ];
 
 let count = 0;
@@ -180,162 +190,136 @@ window.initNavigation = function () {
 	});
 };
 
-window.addEventListener('DOMContentLoaded', () => {
-	window.initNavigation();
-});
-
 
 
 //FOR GALLERY MODAL
+// ======================
+// GALLERY SYSTEM
+// ======================
+
 const galleries = {
 
-gallery1: [
-"../assets/project1/cover.png",
-"../assets/project1/1.png",
-"../assets/project1/2.png",
-"../assets/project1/3.png", 
-],
+    gallery1: [
+        "../assets/project1/cover.png",
+        "../assets/project1/1.png",
+        "../assets/project1/2.png",
+        "../assets/project1/3.png"
+    ],
 
-gallery2: [
-"../assets/project2/cover.png",
-"../assets/project2/1.png",
-"../assets/project2/2.png",
-"../assets/project2/3.png",
-"../assets/project2/4.png",
-
-
-]
+    gallery2: [
+        "../assets/project2/cover.png",
+        "../assets/project2/1.png",
+        "../assets/project2/2.png",
+        "../assets/project2/3.png",
+        "../assets/project2/4.png"
+    ]
 
 };
 
-let currentGallery = null;
+let currentGallery = "";
 let currentIndex = 0;
 
 function openGallery(galleryId){
 
-	currentGallery = galleryId;
+    const modal = document.getElementById("gallery-modal");
+    const image = document.getElementById("gallery-modal-image");
+    const counter = document.getElementById("gallery-modal-counter");
 
-	currentIndex = 0;
+    if(!modal){
+        alert("Gallery Modal Not Found");
+        return;
+    }
 
-	const modal = document.getElementById('gallery-modal');
-	const message = document.getElementById('gallery-modal-message');
-	const image = document.getElementById('gallery-modal-image');
-	const counter = document.getElementById('gallery-modal-counter');
-	const controls = document.getElementById('gallery-modal-controls');
+    currentGallery = galleryId;
+    currentIndex = 0;
 
-	if (!modal || !message || !image || !counter || !controls) return;
+    modal.style.display = "flex";
 
-	const items = galleries[galleryId] || [];
+    document.body.classList.add("gallery-open");
 
-	modal.style.display = 'flex';
-	document.body.classList.add('gallery-open');
+    image.src = galleries[currentGallery][currentIndex];
 
-	if (!items.length) {
-		message.textContent = 'Images for this project are not available yet.';
-		message.style.display = 'block';
-		image.style.display = 'none';
-		controls.style.display = 'none';
-		counter.textContent = '';
-		return;
-	}
-
-	message.style.display = 'none';
-	image.style.display = 'block';
-	controls.style.display = 'flex';
-
-	updateGallery();
+    counter.innerHTML =
+    `${currentIndex + 1} / ${galleries[currentGallery].length}`;
 
 }
 
 function closeGallery(){
 
-	const modal = document.getElementById('gallery-modal');
-	if (modal) modal.style.display = 'none';
-	document.body.classList.remove('gallery-open');
+    const {
+        modal
+    } = getGalleryElements();
+
+    if(!modal) return;
+
+    modal.style.display = "none";
+
+    document.body.classList.remove("gallery-open");
 
 }
 
 function nextImage(){
 
-	if (!galleries[currentGallery] || !galleries[currentGallery].length) return;
+    if(!galleries[currentGallery]) return;
 
-    if(
-        currentIndex <
-        galleries[currentGallery].length - 1
-    ){
+    currentIndex++;
 
-        currentIndex++;
-
-    }else{
-
+    if(currentIndex >= galleries[currentGallery].length){
         currentIndex = 0;
-
     }
 
     updateGallery();
-
 }
 
 function prevImage(){
 
-	if (!galleries[currentGallery] || !galleries[currentGallery].length) return;
+    if(!galleries[currentGallery]) return;
 
-    if(currentIndex > 0){
+    currentIndex--;
 
-        currentIndex--;
-
-    }else{
-
-        currentIndex =
-        galleries[currentGallery].length - 1;
-
+    if(currentIndex < 0){
+        currentIndex = galleries[currentGallery].length - 1;
     }
 
     updateGallery();
-
 }
 
 function updateGallery(){
 
-	const items = galleries[currentGallery] || [];
+    const {
+        image,
+        counter
+    } = getGalleryElements();
 
-	if (!items.length) return;
-
-    const image = document.getElementById(
-		'gallery-modal-image'
-    );
-
-    const counter = document.getElementById(
-		'gallery-modal-counter'
-    );
+    if(!image || !counter) return;
 
     image.src =
-	items[currentIndex];
+    galleries[currentGallery][currentIndex];
 
     counter.innerHTML =
-    (currentIndex + 1)
-    +
-    " / "
-    +
-    galleries[currentGallery].length;
+    `${currentIndex + 1} / ${galleries[currentGallery].length}`;
 
 }
 
-//FOR BACKGROUND MUSIC
-const musicBtn = document.getElementById("musicBtn");
-const bgMusic = document.getElementById("bgMusic");
 
-musicBtn.addEventListener("click", () => {
+document.addEventListener("DOMContentLoaded", () => {
 
-    if(bgMusic.paused){
+    const modal = document.getElementById("gallery-modal");
 
-        bgMusic.volume = 0.3;
-        bgMusic.play();
+    if(modal){
+
+        console.log("Gallery Modal Loaded Successfully");
 
     }else{
 
-        bgMusic.pause();
+        console.error("Gallery Modal Missing");
 
     }
 
 });
+
+// MAKE FUNCTIONS GLOBAL
+window.openGallery = openGallery;
+window.closeGallery = closeGallery;
+window.nextImage = nextImage;
+window.prevImage = prevImage;
