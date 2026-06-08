@@ -35,7 +35,6 @@ rel="stylesheet">
 <li><a href="about.html">About</a></li>
 <li><a href="projects.html">Projects</a></li>
 <li><a href="contact.html">Contact</a></li>
-
 </ul>
 
 </nav>
@@ -206,25 +205,35 @@ rel="stylesheet">
 
     <div class="gallery-modal-content">
 
-        <button class="gallery-close" type="button" onclick="closeGallery()">&times;</button>
+        <button class="gallery-close" type="button" onclick="closeGallery()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
 
         <div id="gallery-modal-controls" class="gallery-controls">
 
-            <button class="gallery-nav gallery-prev" type="button" onclick="prevImage()">
-                <i class="fa-solid fa-chevron-left"></i>
-            </button>
+    <div class="gallery-stage">
 
-            <div class="gallery-stage">
-                <img id="gallery-modal-image" alt="Project gallery image">
-                <p id="gallery-modal-message" class="gallery-message"></p>
-                <div id="gallery-modal-counter" class="gallery-counter"></div>
-            </div>
+        <img id="gallery-modal-image" alt="Project gallery image">
 
-            <button class="gallery-nav gallery-next" type="button" onclick="nextImage()">
-                <i class="fa-solid fa-chevron-right"></i>
-            </button>
+        <p id="gallery-modal-message" class="gallery-message"></p>
 
-        </div>
+        <div id="gallery-modal-counter" class="gallery-counter"></div>
+
+    </div>
+
+    <div class="gallery-buttons">
+
+        <button class="gallery-nav" onclick="prevImage()">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="gallery-nav" onclick="nextImage()">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+    </div>
+
+</div>
 
     </div>
 
