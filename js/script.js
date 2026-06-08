@@ -1,8 +1,7 @@
 const texts = [
-	"Wawata Leader",
 	"Software Engineer",
-	"Virtual Assistant",
-	"Tech Support",
+	"Aspiring Virtual Assistant",
+	"IT Support",
 ];
 
 let count = 0;
