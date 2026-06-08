@@ -1,16 +1,16 @@
 // Handle page reloads to reset to home page
-window.addEventListener("pageshow", function (event) {
+console.log("SCRIPT LOADED");
 
-    const nav =
-    performance.getEntriesByType("navigation")[0];
+const navEntries = performance.getEntriesByType("navigation");
 
-    if (nav && nav.type === "reload") {
+console.log(navEntries);
 
-        window.location.replace("../index.html");
-
-    }
-
-});
+if (
+    navEntries.length > 0 &&
+    navEntries[0].type === "reload"
+) {
+    window.location.replace("../index.html");
+}
 
 const texts = [
 	"Software Engineer",
