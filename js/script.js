@@ -22,9 +22,10 @@ if (
 }
 
 const texts = [
-	"Software Engineer",
-	"Virtual Assistant",
-	"Tech Support",
+	"Aspiring Software Engineer",
+	"Aspiring Virtual Assistant",
+	"Aspiring Tech Support",
+	"Aspiring AI Engineer",
 ];
 
 let count = 0;
