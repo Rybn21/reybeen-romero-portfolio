@@ -22,7 +22,6 @@ if (
 }
 
 const texts = [
-	"Wawata Leader",
 	"Software Engineer",
 	"Virtual Assistant",
 	"Tech Support",
