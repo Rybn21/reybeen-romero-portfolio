@@ -22,9 +22,8 @@ if (
 }
 
 const texts = [
+	"Aspiring Cybersecurity Engineer",
 	"Aspiring Software Engineer",
-	"Aspiring Virtual Assistant",
-	"Aspiring Tech Support",
 	"Aspiring AI Engineer",
 ];
 
