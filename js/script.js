@@ -22,11 +22,12 @@ if (
 }
 
 const texts = [
-	"Aspiring Cybersecurity Engineer",
-	"Aspiring Software Engineer",
-	"Aspiring AI Engineer",
+	"Computer Science Graduate",
+	"Cybersecurity Enthusiast",
+	"Software Engineering Enthusiast",
+	"IT Support",
+	
 ];
-
 let count = 0;
 let index = 0;
 
