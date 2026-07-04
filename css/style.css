@@ -528,13 +528,25 @@ transform:scale(1.05);
 }
 
 .about-card {
-    width: 100%;
-    max-width: 1400px;
-    padding: 60px;
+    max-width:1500px;
+    width:100%;
+    padding:70px;
     border-radius: 32px;
     background: rgba(255, 255, 255, .01);
     border: 1px solid rgba(255, 255, 255, .08);
     backdrop-filter: blur(1px);
+}
+.about-card{
+
+transition:.4s;
+}
+
+.about-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:
+0 0 40px rgba(0,255,136,.08);
 }
 
 /* HEADER */
@@ -645,11 +657,9 @@ transform:scale(1.05);
 .about-body p{
 
     color:#bdbdbd;
-
-    font-size:1.1rem;
-
-    line-height:2;
-
+    font-size:1.15rem;
+    line-height:2.1;
+    letter-spacing:.2px;
     margin-bottom:22px;
 }
 
@@ -680,16 +690,13 @@ transform:scale(1.05);
 
 .skills-grid span{
 
-    padding:12px 20px;
-
+    padding:13px 22px;
+    font-weight:500;
+    font-size:.95rem;
     border-radius:12px;
-
     background:rgba(255,255,255,.03);
-
     border:1px solid rgba(0,255,136,.15);
-
     color:white;
-
     transition:.3s;
 }
 
